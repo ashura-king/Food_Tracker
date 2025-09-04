@@ -1,5 +1,5 @@
-import Front from './Pages/Front.jsx'
-import Footer from './Pages/Footer.jsx'
+import Front from './Components/Front.jsx'
+import Footer from './Components/Footer.jsx'
 
 function App() {
  
