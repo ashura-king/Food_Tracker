@@ -1,30 +1,31 @@
-import { useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import Logo from "../assets/food.svg";
 import Pattern from '../assets/back2.svg';
+import { useNavigate } from 'react-router-dom';
+import '../Design/Front.css';
+import '../Design/Modal.css';
 
 
-
+import AuthForm from './Auth/Register';
 
 function Front() {
+  const navigate = useNavigate();
+  const [showauth, setShowAuth] = useState(false)
+  const[authMode, setAuthMode] = useState("login");
+const handleGetStarted=() =>{
+  console.log("Get Started clicked");
+  navigate("/dashboard");
+}
+  
   useEffect(() => {
-   
-   
     const handleDragStart = (e) =>  e.preventDefault();
-
     document.addEventListener('dragstart', handleDragStart);
-    
-
- 
     return () => {
       document.removeEventListener('dragstart', handleDragStart);
      
     };
   }, []);
 
-  const handleGetStarted = () => {
-    console.log('Get Started clicked!');
-    // may dagdag pa digdi wait lang..
-  };
 
   return (
     <>
@@ -34,8 +35,8 @@ function Front() {
       
         {/*this is login and register section */}
       <div className="auth-buttons">
-        <button  >Login</button>
-        <button>Register</button>
+        <button onClick={() => {setAuthMode("login"); setShowAuth(true)}}>Login</button>
+        <button onClick={()=> {setAuthMode("register"); setShowAuth(true)}}>Register</button>
       </div>
     </div>
 
@@ -48,6 +49,14 @@ function Front() {
           Get Started
         </button>
       </div>
+     {showauth &&(
+      <div className="modal-overlay">
+        <AuthForm
+        defaultMode={authMode}
+        onClose ={() => setShowAuth(false)}
+        />
+      </div>
+     )}
         {/*this is carousel ection  2*/}
      <div className="carousel-space">
             {/*this is logo section  2*/}
