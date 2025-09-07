@@ -5,8 +5,7 @@
     --green-light: #7af903;
     --green-dark: #1F8A44;
     --shadow: rgba(31, 138, 68, 0.2);
-    
-    /* Consistent spacing scale */
+   
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
@@ -14,7 +13,7 @@
     --space-xl: 3rem;
     --space-xxl: 4rem;
     
-    /* Scalable font sizes */
+  
     --text-sm: 1rem;
     --text-md: 1.25rem;
     --text-lg: 2rem;
@@ -27,7 +26,6 @@
     box-sizing: border-box;
 }
 
-/* ✅ Proper viewport handling for zoom consistency */
 html, body {
     width: 100%;
     min-height: 100vh;
@@ -39,7 +37,7 @@ html, body {
     -ms-user-select: none;
 }
 
-/* ✅ Pattern with rem units for consistent scaling */
+
 .pattern {
     position: fixed;
     inset: 0;
@@ -55,7 +53,7 @@ html, body {
     to   { background-position: 18.75rem 18.75rem; } 
 }
 
-/* ✅ Responsive header */
+/* Responsive header */
 .header {
     position: absolute;
     top: var(--space-md); 
@@ -89,7 +87,7 @@ body {
     background: linear-gradient(180deg, var(--green-light), var(--green-dark));
 }
 
-/* ✅ Container with responsive spacing */
+
 .container {
     margin-top: 6.25rem;
     display: flex;

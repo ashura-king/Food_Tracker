@@ -1,15 +1,8 @@
-import Front from './Components/Front.jsx'
-import Footer from './Components/Footer.jsx'
+import router from "./Router/router.jsx";
+import { RouterProvider } from 'react-router-dom';
 
 function App() {
- 
-  return(
-  <>
-  <Front></Front>
-<Footer></Footer>
-  </>
-  )
-
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
